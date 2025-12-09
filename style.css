@@ -1,0 +1,354 @@
+/* RESET & VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #0056b3; /* Corporate Industrial Blue */
+    --dark-grey: #1a1a1a;
+    --light-grey: #f4f4f4;
+    --steel-grey: #333333;
+    --text-white: #ffffff;
+    --text-dark: #222222;
+    --accent-orange: #d35400; /* Subtle accent for calls to action */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--dark-grey);
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark-grey);
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary-blue);
+}
+
+.navbar .container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-blue);
+}
+
+.btn-nav {
+    background-color: var(--primary-blue);
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-nav:hover {
+    background-color: #004494;
+}
+
+/* BURGER MENU (Mobile) */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-white);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596520977468-b7c12660a996?auto=format&fit=crop&w=1920&q=80'); /* Industrial truck background */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content .tagline {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.hero-btns .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECTIONS COMMON */
+.section {
+    padding: 80px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: inherit;
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-blue);
+    margin: 10px auto;
+}
+
+/* DARK SECTION */
+.dark-section {
+    background-color: var(--dark-grey);
+    color: var(--text-white);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: var(--steel-grey);
+    padding: 30px;
+    text-align: center;
+    border-top: 4px solid var(--primary-blue);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* LIGHT SECTION */
+.light-section {
+    background-color: var(--light-grey);
+    color: var(--text-dark);
+}
+
+.split-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.image-side {
+    flex: 1;
+    min-height: 400px;
+    background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80'); /* Mechanic/Parts bg */
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.text-side {
+    flex: 1;
+}
+
+.text-side h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+}
+
+/* SERVICES GRID */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-box {
+    background-color: var(--steel-grey);
+    padding: 40px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.service-box:hover {
+    background-color: #444;
+    transform: translateY(-5px);
+}
+
+.center-text {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ACCENT SECTION */
+.accent-section {
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+}
+
+.company-motto {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    border-left: 5px solid var(--primary-blue);
+    padding-left: 20px;
+}
+
+/* FOOTER */
+.footer-section {
+    background-color: #111;
+    color: #aaa;
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-col a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 80px;
+        background-color: var(--dark-grey);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .split-layout {
+        flex-direction: column;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
